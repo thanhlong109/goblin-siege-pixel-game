@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 509820021
+    locked: 0
+  - name: Obstacle
+    uniqueID: 917720597
     locked: 0
   - name: Default
     uniqueID: 0
