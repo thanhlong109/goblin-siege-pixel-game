@@ -48,11 +48,16 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 3dd869ebda91eee4bae6f734173303e1, type: 3}
     - {fileID: 2800000, guid: aa3d5ce58526d7641bf42bb19922d004, type: 3}
     - {fileID: 2800000, guid: 63c989715c0707542a5370aea7a45fb3, type: 3}
+    - {fileID: 2800000, guid: 1dea1df4f719d2d4fb284d50484d55ba, type: 3}
+    - {fileID: 2800000, guid: abd9e9c940eb5fe498ff2750a505fade, type: 3}
+    - {fileID: 2800000, guid: de3628ef25b4d5a4395ad33715242974, type: 3}
+    - {fileID: 2800000, guid: 3306fdf9a30226d489f47d1bd909e2a0, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
     - 63c989715c0707542a5370aea7a45fb3: 21300000
+    - 1dea1df4f719d2d4fb284d50484d55ba: 21300000
     - aa3d5ce58526d7641bf42bb19922d004: -1810216262
     - aa3d5ce58526d7641bf42bb19922d004: 1501317536
     - aa3d5ce58526d7641bf42bb19922d004: -263885280
@@ -147,6 +152,8 @@ SpriteAtlas:
     - aa3d5ce58526d7641bf42bb19922d004: 1187973776
     - aa3d5ce58526d7641bf42bb19922d004: -959042713
     - aa3d5ce58526d7641bf42bb19922d004: 945703747
+    - abd9e9c940eb5fe498ff2750a505fade: 21300000
+    - 3306fdf9a30226d489f47d1bd909e2a0: 21300000
     - 3dd869ebda91eee4bae6f734173303e1: 1414381656
     - 3dd869ebda91eee4bae6f734173303e1: -2030487987
     - 3dd869ebda91eee4bae6f734173303e1: -1123056286
@@ -167,9 +174,11 @@ SpriteAtlas:
     - 3dd869ebda91eee4bae6f734173303e1: 1147219018
     - 3dd869ebda91eee4bae6f734173303e1: -2051912423
     - 3dd869ebda91eee4bae6f734173303e1: -455134710
+    - de3628ef25b4d5a4395ad33715242974: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 63c989715c0707542a5370aea7a45fb3, type: 3}
+  - {fileID: 21300000, guid: 1dea1df4f719d2d4fb284d50484d55ba, type: 3}
   - {fileID: -1810216262, guid: aa3d5ce58526d7641bf42bb19922d004, type: 3}
   - {fileID: 1501317536, guid: aa3d5ce58526d7641bf42bb19922d004, type: 3}
   - {fileID: -263885280, guid: aa3d5ce58526d7641bf42bb19922d004, type: 3}
@@ -264,6 +273,8 @@ SpriteAtlas:
   - {fileID: 1187973776, guid: aa3d5ce58526d7641bf42bb19922d004, type: 3}
   - {fileID: -959042713, guid: aa3d5ce58526d7641bf42bb19922d004, type: 3}
   - {fileID: 945703747, guid: aa3d5ce58526d7641bf42bb19922d004, type: 3}
+  - {fileID: 21300000, guid: abd9e9c940eb5fe498ff2750a505fade, type: 3}
+  - {fileID: 21300000, guid: 3306fdf9a30226d489f47d1bd909e2a0, type: 3}
   - {fileID: 1414381656, guid: 3dd869ebda91eee4bae6f734173303e1, type: 3}
   - {fileID: -2030487987, guid: 3dd869ebda91eee4bae6f734173303e1, type: 3}
   - {fileID: -1123056286, guid: 3dd869ebda91eee4bae6f734173303e1, type: 3}
@@ -284,8 +295,10 @@ SpriteAtlas:
   - {fileID: 1147219018, guid: 3dd869ebda91eee4bae6f734173303e1, type: 3}
   - {fileID: -2051912423, guid: 3dd869ebda91eee4bae6f734173303e1, type: 3}
   - {fileID: -455134710, guid: 3dd869ebda91eee4bae6f734173303e1, type: 3}
+  - {fileID: 21300000, guid: de3628ef25b4d5a4395ad33715242974, type: 3}
   m_PackedSpriteNamesToIndex:
   - Idle
+  - Box Pieces 1
   - Terrain (32x32)_40
   - Terrain (32x32)_41
   - Terrain (32x32)_42
@@ -380,6 +393,8 @@ SpriteAtlas:
   - Terrain (32x32)_12
   - Terrain (32x32)_11
   - Terrain (32x32)_10
+  - Box Pieces 2
+  - Box Pieces 4
   - Decorations (32x32)_15
   - Decorations (32x32)_14
   - Decorations (32x32)_17
@@ -400,6 +415,7 @@ SpriteAtlas:
   - Decorations (32x32)_1
   - Decorations (32x32)_8
   - Decorations (32x32)_9
+  - Box Pieces 3
   m_RenderDataMap: {}
   m_Tag: AssetsAtlas
   m_IsVariant: 0
