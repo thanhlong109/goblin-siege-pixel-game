@@ -12,10 +12,12 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] Transform leftPoint;
     [SerializeField] Transform rightPoint;
     [SerializeField] bool grounded = true;
+    [SerializeField] bool isAttacking = false;
 
     private GatherInput gI;
     private Rigidbody2D rb;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private int direction = 1;
    
@@ -24,6 +26,7 @@ public class PlayerBehavior : MonoBehaviour
         gI = GetComponent<GatherInput>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     
@@ -38,6 +41,7 @@ public class PlayerBehavior : MonoBehaviour
         CheckStatus();
         Move();
         Jump();
+        Attack();
     }
 
     private void Move()
@@ -55,24 +59,30 @@ public class PlayerBehavior : MonoBehaviour
         gI.isJump = false;
     }
 
+    // Flip player follow player direction
     private void Flip()
     {
-        if(direction * gI.valueX < 0)
+        if(direction * gI.valueX < 0) // if currect direction difference with new direction then 
         {
-            transform.localScale = new Vector3(-transform.localScale.x, 1, 1);
+            spriteRenderer.flipX = direction > 0;
             direction *= -1;
         }
     }
 
     private void Attack()
     {
+        if (gI.tryAttack && !isAttacking)
+        {
+            isAttacking = true;
+            animator.SetTrigger("attack");
+        }
        
     }
 
     public void ResetAttack()
     {
         gI.tryAttack = false;
-        animator.SetBool("attack", false);
+        isAttacking = false;
     }
 
     private void SetAnimatorValues()
@@ -80,21 +90,13 @@ public class PlayerBehavior : MonoBehaviour
         animator.SetFloat("moveSpeed", Mathf.Abs(rb.velocity.x));   
         animator.SetFloat("ySpeed", rb.velocity.y);
         animator.SetBool("grounded", grounded);
-        animator.SetBool("attack", gI.tryAttack);
     }
 
     private void CheckStatus()
     {
         RaycastHit2D leftCheckHit = Physics2D.Raycast(leftPoint.position, Vector2.down, rayLength, groundLayer);
         RaycastHit2D rightCheckHit = Physics2D.Raycast(rightPoint.position, Vector2.down, rayLength, groundLayer);
-        if (leftCheckHit || rightCheckHit)
-        {
-            grounded = true;
-        }
-        else
-        {
-            grounded = false;
-        }
+        grounded = leftCheckHit || rightCheckHit;
         SeeRay(leftCheckHit, leftPoint);
         SeeRay(rightCheckHit, rightPoint);
     }

@@ -1993,10 +1993,11 @@ MonoBehaviour:
   rayLength: 0.1
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   leftPoint: {fileID: 221963878}
   rightPoint: {fileID: 1265326746}
   grounded: 1
+  isAttacking: 0
 --- !u!114 &1263644951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2072,7 +2073,7 @@ GameObject:
   - component: {fileID: 1265872337}
   - component: {fileID: 1265872336}
   - component: {fileID: 1265872335}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: GroundTilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
