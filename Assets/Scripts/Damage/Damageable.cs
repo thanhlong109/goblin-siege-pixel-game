@@ -21,11 +21,13 @@ public class Damageable : MonoBehaviour
 
     private Animator animator;
     private bool canTakeDame = true;
+    private GameObject actor;
 
     private void Start()
     {
         currentHealth = maxHealth; 
         animator = GetComponentInParent<Animator>();
+        actor = GetComponentInParent<Transform>().gameObject;
     }
 
     public void TakeDamage(float damage)
@@ -38,9 +40,8 @@ public class Damageable : MonoBehaviour
                 animator.SetBool("takeDameage",true);
             }
             StartCoroutine(DamagePrevention());
+            Debug.Log("attack");
         }
-       
-        
     }
 
     private IEnumerator DamagePrevention()
@@ -78,9 +79,15 @@ public class Damageable : MonoBehaviour
             animator.SetBool("die", true);
         }
 
+        if (dropItems.Length > 0 && Random.value < dropChance)
+        {
+            int dropIndex = Random.Range(0, dropItems.Length);
+            Instantiate(dropItems[dropIndex], transform.position, Quaternion.identity);
+        }
+
         if (destroyOnDeath)
         {
-            Destroy(GetComponentInParent<Transform>().gameObject);
+            Destroy(actor);
         }
     }
 }

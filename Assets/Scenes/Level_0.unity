@@ -787,6 +787,120 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &122937926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 122937927}
+  - component: {fileID: 122937929}
+  - component: {fileID: 122937928}
+  m_Layer: 11
+  m_Name: PlayerDamageDealer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &122937927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122937926}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1263644947}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &122937928
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122937926}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.99294424, y: 0.6278443}
+      - {x: 0.32609677, y: 0.9054149}
+      - {x: -0.059976578, y: 0.9000393}
+      - {x: -0.05164957, y: 0.009313345}
+      - {x: -0.045961857, y: -0.39747226}
+      - {x: -0.40299773, y: -0.5006864}
+      - {x: -0.6311818, y: -0.5106616}
+      - {x: -0.6404216, y: -0.58848095}
+      - {x: -0.5328068, y: -0.6490798}
+      - {x: -0.33388734, y: -0.77770936}
+      - {x: -0.05806303, y: -0.8634707}
+      - {x: 0.117326975, y: -0.8981708}
+      - {x: 0.33575702, y: -0.90754664}
+      - {x: 0.58778536, y: -0.83900523}
+      - {x: 0.8108611, y: -0.7437321}
+      - {x: 0.9860513, y: -0.6121527}
+      - {x: 1.1449103, y: -0.4129113}
+      - {x: 1.2112408, y: -0.19303632}
+      - {x: 1.2155356, y: 0.057782292}
+      - {x: 1.135984, y: 0.3290093}
+  m_UseDelaunayMesh: 0
+--- !u!114 &122937929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122937926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd671550002dd4b4f9b14e238b14a8ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  attackableLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &221963877
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,7 +989,6 @@ GameObject:
   m_Component:
   - component: {fileID: 456341289}
   - component: {fileID: 456341290}
-  - component: {fileID: 456341291}
   m_Layer: 7
   m_Name: PlayerStats
   m_TagString: Untagged
@@ -949,20 +1062,6 @@ PolygonCollider2D:
       - {x: 0.019198656, y: -0.23415005}
       - {x: 0.012333393, y: 0.12342435}
   m_UseDelaunayMesh: 0
---- !u!114 &456341291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456341288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd671550002dd4b4f9b14e238b14a8ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 10
-  destroyOnHit: 0
 --- !u!1 &461658318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,6 +2037,7 @@ Transform:
   - {fileID: 221963878}
   - {fileID: 1265326746}
   - {fileID: 456341289}
+  - {fileID: 122937927}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1263644948

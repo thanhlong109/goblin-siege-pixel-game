@@ -18,6 +18,7 @@ public class PlayerBehavior : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private DamageDealer damageDealer;
 
     private int direction = 1;
    
@@ -27,6 +28,7 @@ public class PlayerBehavior : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        damageDealer = GetComponentInChildren<DamageDealer>();
     }
 
     
@@ -79,8 +81,14 @@ public class PlayerBehavior : MonoBehaviour
        
     }
 
+    public void AtivateAttackCollider()
+    {
+        damageDealer.SetEnableCollider(true);
+    }
+
     public void ResetAttack()
     {
+        damageDealer.SetEnableCollider(false);
         gI.tryAttack = false;
         isAttacking = false;
     }
